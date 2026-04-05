@@ -5,6 +5,17 @@ import watermark from './assets/watermark.png';
 const WA_NUM = '918448505933';
 const waLink = (msg) => `https://wa.me/${WA_NUM}?text=${encodeURIComponent(msg)}`;
 
+function SectionDivider({ dark, cream }) {
+  const cls = dark ? ' section-divider-dark' : cream ? ' section-divider-cream' : '';
+  return (
+    <div className={`section-divider${cls}`}>
+      <div className="section-divider-line" />
+      <span className="section-divider-gem" aria-hidden="true">✦ ✦ ✦</span>
+      <div className="section-divider-line" />
+    </div>
+  );
+}
+
 const STEPS = [
   { step: '01', title: 'Consultation', desc: 'Chat or visit us. Share your design idea, occasion, and fabric preference.' },
   { step: '02', title: 'Measurements', desc: 'We take precise measurements in-store or guide you remotely via WhatsApp.' },
@@ -172,6 +183,8 @@ export default function BrandSite({ content, onAdminNav, onLoginNav }) {
         <div className="hero-scroll-hint" aria-hidden="true">↓</div>
       </section>
 
+      <SectionDivider />
+
       {/* ── ABOUT ─────────────────────────────────────────── */}
       <section id="about" className="section about-section" aria-label="About us">
         <div className="section-inner">
@@ -203,6 +216,8 @@ export default function BrandSite({ content, onAdminNav, onLoginNav }) {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* ── SERVICES ──────────────────────────────────────── */}
       <section id="services" className="section services-section" aria-label="Our services">
         <div className="section-inner">
@@ -228,6 +243,8 @@ export default function BrandSite({ content, onAdminNav, onLoginNav }) {
           </div>
         </div>
       </section>
+
+      <SectionDivider cream />
 
       {/* ── HOW IT WORKS ──────────────────────────────────── */}
       <section id="how-it-works" className="section hiw-section" aria-label="How it works">
@@ -255,6 +272,8 @@ export default function BrandSite({ content, onAdminNav, onLoginNav }) {
           </div>
         </div>
       </section>
+
+      <SectionDivider />
 
       {/* ── GALLERY ───────────────────────────────────────── */}
       <section id="gallery" className="section gallery-section" aria-label="Our creations gallery">
@@ -309,6 +328,8 @@ export default function BrandSite({ content, onAdminNav, onLoginNav }) {
         </div>
       )}
 
+      <SectionDivider cream />
+
       {/* ── PRICING ───────────────────────────────────────── */}
       <section id="pricing" className="section pricing-section" aria-label="Pricing">
         <div className="section-inner">
@@ -336,6 +357,8 @@ export default function BrandSite({ content, onAdminNav, onLoginNav }) {
         </div>
       </section>
 
+      <SectionDivider dark />
+
       {/* ── TESTIMONIALS ──────────────────────────────────── */}
       {testimonials?.length > 0 && (
         <section id="testimonials" className="section testimonials-section" aria-label="Customer testimonials">
@@ -358,6 +381,8 @@ export default function BrandSite({ content, onAdminNav, onLoginNav }) {
           </div>
         </section>
       )}
+
+      <SectionDivider dark />
 
       {/* ── FAQ ───────────────────────────────────────────── */}
       <section id="faq" className="section faq-section" aria-label="Frequently asked questions">
